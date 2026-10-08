@@ -14,7 +14,6 @@ evaluation_log.csv
 # Dataset workbooks, except the v3 workbook used for training
 *.xlsx
 !ECPE_Synthetic_Journal_Dataset_v3.xlsx
-!HANDWRITTEN DATASET.xlsx
 
 # Python bytecode cache
 __pycache__/
