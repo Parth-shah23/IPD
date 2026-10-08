@@ -1,0 +1,19 @@
+# Local Python environment
+venv/
+
+# Trained model and training checkpoints (generated locally)
+best_ner_model/
+ner-fine-tuned*/
+
+# Project planning document
+ECPE_Journal_Project_Plan.docx
+
+# Evaluation log
+evaluation_log.csv
+
+# Dataset workbooks, except the v3 workbook used for training
+*.xlsx
+!ECPE_Synthetic_Journal_Dataset_v3.xlsx
+
+# Python bytecode cache
+__pycache__/
