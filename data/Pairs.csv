@@ -1,0 +1,439 @@
+entry_id,emotion_clause,emotion,cause_clause,cause,ner,aspect,annotator
+S001,Honestly so happy right now,joy,I scored 42 out of 50,good internal marks,today|DATE,studies_work,LLM-draft
+S002,Feeling really proud of the team,pride,the client loved our demo,client liked demo,My manager|ROLE,studies_work,LLM-draft
+S003,So annoyed,anger,Missed the 8:15 local by like ten seconds,missed train,none,other,LLM-draft
+S004,so grateful for her,gratitude,Maa made my favourite rajma chawal after a really long week,mother's cooking,Maa|ROLE,family,LLM-draft
+S005,I was furious,anger,Aman forgot his entire part,teammate forgot part,Aman|PERSON,studies_work,LLM-draft
+S006,So stressed right now,stress,The assignment deadline is at 11 tonight and I have not even started the second question,deadline,tonight|DATE,studies_work,LLM-draft
+S007,I was so surprised to hear from her,surprise,Neha texted me out of nowhere after like a year,old friend texted,Neha|PERSON,friends,LLM-draft
+S008,I feel like such a loser,sadness,Failed the driving test for the second time because I stalled on the slope,failed driving test,none,self,LLM-draft
+S009,I am so stressed now,stress,Rohan borrowed my notes before the exam and gave them back with coffee stains all over,notes damaged,Rohan|PERSON; tomorrow|DATE,studies_work,LLM-draft
+S010,Kind of dreading it,fear,"Dad called to say we are leaving for my cousin's wedding on Friday, for the whole week",wedding trip,Dad|ROLE; my cousin|ROLE; Friday|DATE; Monday|DATE,family,LLM-draft
+S011,Proud of all of us,pride,Our team won the inter-college quiz at COEP and I answered the last question,won quiz,COEP|ORG,studies_work,LLM-draft
+S012,Ugh so frustrated,anger,My phone fell off the bed and the screen cracked right across,cracked phone,April|DATE,other,LLM-draft
+S013,Felt really proud of myself,pride,Finished the whole 5k run without stopping for the first time ever,finished 5k,none,health,LLM-draft
+S014,I am so stressed,stress,Our landlord increased the rent by 2000 without any notice,rent hike,Our landlord|ROLE,money,LLM-draft
+S015,I am so excited I cannot sit still,joy,My girlfriend and I finally got tickets for the concert in Mumbai after refreshing the page for an hour,concert tickets,My girlfriend|ROLE; Mumbai|LOCATION,relationships,LLM-draft
+S016,Feeling calm and content,contentment,Finished all my pending work by 6pm for once and made tea on the balcony,finished work early,Sunday|DATE,self,LLM-draft
+S017,I feel peaceful,contentment,Cooked pasta for myself and watched an old show on the laptop,quiet evening,none,self,LLM-draft
+S018,Really thankful,gratitude,Prof. Mehta stayed back for an extra hour to explain the proofs to us,teacher stayed back,Prof. Mehta|PERSON,studies_work,LLM-draft
+S019,I am really grateful to have a friend like her,gratitude,Riya covered my share of the bill when my card got declined at the cafe,friend paid bill,Riya|PERSON,friends,LLM-draft
+S020,I am really sad,sadness,"My girlfriend moved to Bangalore today for her job, the city feels so empty already",partner moved away,My girlfriend|ROLE; Bangalore|LOCATION; today|DATE,relationships,LLM-draft
+S021,I have been feeling so low since yesterday,sadness,Our dog got sick again and the vet said it might be serious,dog sick,the vet|ROLE; yesterday|DATE,family,LLM-draft
+S022,I feel so guilty,guilt,I forgot Mom's birthday wish till 9pm and she did not say anything,forgot mom's birthday,Mom|ROLE,family,LLM-draft
+S023,Totally shocked,surprise,Opened the door and my cousin from Nagpur was standing there with a bag,cousin showed up,my cousin|ROLE; Nagpur|LOCATION,family,LLM-draft
+S024,Honestly scared,fear,The doctor asked me to repeat the blood test next week because one value looked off,repeat blood test,The doctor|ROLE; next week|DATE,health,LLM-draft
+S025,Overwhelmed and cannot even think straight,stress,Three exams in four days and I have only finished one syllabus,exam pile-up,none,studies_work,LLM-draft
+S026,I am so happy today,joy,Mom finally agreed to let me go on the trip with Karan and Isha,mom allowed trip,today|DATE; Mom|ROLE; Karan|PERSON; Isha|PERSON; January|DATE,family,LLM-draft
+S027,Feeling really low,sadness,the placement results came out and my name is not on the list,not placed,none,studies_work,LLM-draft
+S028,I am nervous about tomorrow,fear,the interview is with the CTO himself,interview with CTO,tomorrow|DATE; the CTO|ROLE,studies_work,LLM-draft
+S029,Proud of myself today,pride,I said no to my seniors for the first time and held my ground,said no,today|DATE,self,LLM-draft
+S030,Angry at Karan,anger,he promised to pick me up and just never showed up,friend no-show,Karan|PERSON,friends,LLM-draft
+S031,I feel so guilty,guilt,I snapped at my sister over something really small,snapped at sister,my sister|ROLE,family,LLM-draft
+S032,Grateful to Dev,gratitude,he stayed up till 3am helping me fix my project code,friend helped,Dev|PERSON,friends,LLM-draft
+S033,Feeling kind of content today,contentment,nothing went wrong and I got to read for an hour,peaceful day,today|DATE,self,LLM-draft
+S034,So stressed about money,stress,my stipend from Infosys is delayed by a month now,stipend delayed,Infosys|ORG,money,LLM-draft
+S035,I was really surprised,surprise,the professor actually remembered my name from the very first lecture,professor remembered me,the professor|ROLE,studies_work,LLM-draft
+S036,I wanted to scream into a pillow,anger,The metro was delayed by forty minutes and then it started pouring right outside the station,bad commute,The security guard|ROLE; Today|DATE,other,LLM-draft
+S037,I really miss everyone there,sadness,I have not been home in almost six months,away from home,Dadi|ROLE; this weekend|DATE; Monday|DATE,family,LLM-draft
+S038,feeling numb and embarrassed,guilt,Everyone in my group passed except me,failed lab,none,studies_work,LLM-draft
+S039,My heart was racing for ten minutes afterwards,fear,My roommate left the gas on again,gas left on,My roommate|ROLE,other,LLM-draft
+S040,"I am smiling as I write this, such sweet memories",contentment,"Found my school diary in the cupboard, behind two broken chargers, and read it twice",found old diary,Saturday|DATE,self,LLM-draft
+S041,I am really happy for her,joy,Ananya got selected for the exchange program,friend selected,Ananya|PERSON; June|DATE,friends,LLM-draft
+S042,Panicking inside the whole time,fear,I had not revised anything from the last two chapters,unprepared for quiz,The professor|ROLE,studies_work,LLM-draft
+S043,I feel so helpless,sadness,Papa has been working night shifts since March and he looks so tired these days,father overworked,Papa|ROLE; March|DATE; Yesterday|DATE,family,LLM-draft
+S044,I am a little disappointed,sadness,nobody laughed at my jokes,jokes fell flat,none,other,LLM-draft
+S045,I have been so angry since then,anger,"He said I always make things about myself, right in the middle of the cafe",partner's remark,My boyfriend|ROLE,relationships,LLM-draft
+S046,I feel quite relaxed about going now,contentment,"The trainer was really kind and showed me the machines slowly, without making me feel dumb",kind trainer,today|DATE; The trainer|ROLE,health,LLM-draft
+S047,I was so thankful,gratitude,Aunty from the next flat sent food for all of us,neighbour sent food,Aunty|ROLE,other,LLM-draft
+S048,I walked out of the exam hall so surprised,surprise,The paper turned out to be much easier than I expected,easy paper,none,studies_work,LLM-draft
+S049,I am just so anxious about the whole thing,fear,Lost my wallet somewhere between the bus stop and the canteen,lost wallet,the clerk|ROLE,other,LLM-draft
+S050,I feel lighter now,contentment,He apologised properly and even bought me chai,friend apologised,Today|DATE; Aman|PERSON,friends,LLM-draft
+S051,Feeling so low today,sadness,implicit,unknown,last night|DATE; today|DATE,none,LLM-draft
+S052,I feel really lonely tonight,sadness,implicit,unknown,tonight|DATE,none,LLM-draft
+S053,Been irritated at everyone since I woke up,anger,implicit,unknown,this morning|DATE,none,LLM-draft
+S054,I just feel anxious for no reason,fear,implicit,unknown,today|DATE,none,LLM-draft
+S055,Felt really happy for no particular reason,joy,implicit,unknown,today|DATE,none,LLM-draft
+S056,I am just tired of everything lately,stress,implicit,unknown,none,none,LLM-draft
+S057,"I feel okay, nothing to complain about really",contentment,implicit,unknown,none,none,LLM-draft
+S058,Can't stop smiling today and I do not know why,joy,implicit,unknown,today|DATE; the bus conductor|ROLE,none,LLM-draft
+S059,Missing home so much tonight,sadness,implicit,unknown,tonight|DATE,none,LLM-draft
+S060,a strange sinking feeling during lunch today that I forgot something important,fear,implicit,unknown,today|DATE,none,LLM-draft
+S061,Felt really proud tonight for some reason,pride,implicit,unknown,tonight|DATE,none,LLM-draft
+S062,Randomly feeling grateful today,gratitude,implicit,unknown,today|DATE,none,LLM-draft
+S063,Feel so guilty and I cannot even say about what,guilt,implicit,unknown,none,none,LLM-draft
+S064,Everything felt too loud today,stress,implicit,unknown,today|DATE,none,LLM-draft
+S065,Been so angry at everything since yesterday,anger,implicit,unknown,yesterday|DATE,none,LLM-draft
+S066,I could not stop smiling,joy,Got the offer letter from TCS today,job offer,TCS|ORG; today|DATE; Maa|ROLE; the warden|ROLE; Pune|LOCATION,studies_work,LLM-draft
+S066,my stomach dropped,fear,"I have to move to Pune in a month, away from everyone I know",moving away,same,self,LLM-draft
+S067,I am so proud of how I played,pride,Won the badminton match against the seniors,won match,Isha|PERSON; the doctor|ROLE,health,LLM-draft
+S067,I feel awful about it,sadness,Isha hurt her ankle in the last game,friend injured,same,friends,LLM-draft
+S068,so happy,joy,I got an A in thermodynamics,got an A,Prof. Mehta|PERSON; Rutu|PERSON,studies_work,LLM-draft
+S068,I felt so bad for her,sadness,Rutu failed again and she was crying in the washroom,friend failed,same,friends,LLM-draft
+S069,I felt so warm and content,contentment,Spent the afternoon with Nani and she told me stories from her childhood,time with grandmother,Nani|ROLE,family,LLM-draft
+S069,instantly got stressed,stress,I got a call from the bank about my education loan EMI,loan EMI call,same,money,LLM-draft
+S070,I am so angry,anger,My girlfriend lied to me about where she was last Friday and I found out through Instagram,partner lied,My girlfriend|ROLE; last Friday|DATE,relationships,LLM-draft
+S070,I feel guilty,guilt,checking her profile in the first place,checked her profile,same,relationships,LLM-draft
+S071,I am honestly thrilled for her,joy,My sister is getting engaged in March,sister's engagement,My sister|ROLE; March|DATE; Mom|ROLE,family,LLM-draft
+S071,it is making me anxious,fear,Mom keeps asking when I will settle down too,pressure to settle,same,family,LLM-draft
+S072,I was really grateful,gratitude,The canteen guy gave me extra rice without even asking,canteen kindness,The canteen guy|ROLE,other,LLM-draft
+S072,my mood just dropped,sadness,I saw my CGPA on the portal,low CGPA,same,studies_work,LLM-draft
+S073,"I felt such a relief, I almost danced in the corridor",joy,Finally cleared the backlog paper,cleared backlog,Dad|ROLE,studies_work,LLM-draft
+S073,I was annoyed that he could not just be happy for me,anger,Dad called after that and asked why it took me so long,dad's reaction,same,family,LLM-draft
+S074,I wanted to disappear right there,guilt,Kartik made fun of my accent in front of the whole class,mocked accent,Kartik|PERSON; the professor|ROLE; Neha|PERSON,studies_work,LLM-draft
+S074,it made my day,joy,Neha came and sat next to me and said she liked how I speak,friend's kindness,same,friends,LLM-draft
+S075,I feel guilty about it,guilt,Skipped the gym again this week,skipped gym,this week|DATE; today|DATE,health,LLM-draft
+S075,I feel really proud of that,pride,I made a proper healthy breakfast today,healthy breakfast,same,health,LLM-draft
+S076,I panicked so badly,fear,The electricity went out right before my online interview,power cut,the interviewer|ROLE,studies_work,LLM-draft
+S076,I felt so lucky,joy,the interviewer was kind about it,kind interviewer,same,studies_work,LLM-draft
+S077,I cried from relief,joy,the doctors said everything went well,surgery went well,Mummy|ROLE; today|DATE; Papa|ROLE; the nurse|ROLE; my sister|ROLE,family,LLM-draft
+S077,so tired and stressed,stress,running around the hospital since morning,hospital rush,same,family,LLM-draft
+S078,I felt on top of the world,joy,I scored the winning goal in the hostel football match,winning goal,The warden|ROLE,other,LLM-draft
+S078,I was scared it was serious,fear,my knee was bleeding,bleeding knee,same,health,LLM-draft
+S079,I was so surprised,surprise,My landlord returned the full deposit without any deduction,full deposit returned,My landlord|ROLE,money,LLM-draft
+S079,I already hate the commute,anger,the new flat is 3 km farther from college,longer commute,same,other,LLM-draft
+S080,I felt betrayed,anger,Anjali messaged to say she is leaving the project team,teammate leaving,Anjali|PERSON; Sir|ROLE,studies_work,LLM-draft
+S080,I was stunned,surprise,Sir called me in and offered me the lead role,offered lead role,same,studies_work,LLM-draft
+S081,I felt really happy,joy,Went to the old school ground in Nashik and it brought back so many memories,visited school,Nashik|LOCATION; my old teacher|ROLE; last year|DATE,self,LLM-draft
+S081,I just sat there feeling sad,sadness,I saw my old teacher had passed away last year when I read the notice board near the gate,teacher passed away,same,self,LLM-draft
+S082,I feel so relieved and happy,joy,My girlfriend and I finally cleared the air after two weeks of not talking,made up,My girlfriend|ROLE,relationships,LLM-draft
+S082,I am worried it will happen again,fear,we did not really talk about the root problem,unresolved issue,same,relationships,LLM-draft
+S083,I felt proud and a bit shy,pride,My professor praised my paper in front of the class,paper praised,My professor|ROLE; my labmate|ROLE,studies_work,LLM-draft
+S083,it stung more than I want to admit,sadness,my labmate said I just got lucky,labmate's comment,same,studies_work,LLM-draft
+S084,I feel so independent,pride,Bought my first pair of running shoes with my own stipend,first purchase,none,money,LLM-draft
+S084,I am so stressed,stress,the hostel fees bill arrived,fees bill,same,money,LLM-draft
+S085,so proud of her,pride,Rutu's dance performance at the fest was unreal,friend's performance,Rutu|PERSON,friends,LLM-draft
+S085,I was in a total panic,fear,I could not find my phone anywhere,lost phone,same,other,LLM-draft
+S086,So excited,joy,Saw my name on the interview shortlist for Infosys,shortlisted,Infosys|ORG,studies_work,LLM-draft
+S086,nervous at the same time,fear,Saw my name on the interview shortlist for Infosys,shortlisted,same,studies_work,LLM-draft
+S087,I am proud of him,pride,My brother is leaving for the US next month for his masters,brother going abroad,My brother|ROLE; US|LOCATION; next month|DATE,family,LLM-draft
+S087,I am going to miss him like crazy,sadness,My brother is leaving for the US next month for his masters,brother going abroad,same,family,LLM-draft
+S088,Excited about the new place,joy,"Moved into the new hostel room today, with a balcony and everything",new room,today|DATE,self,LLM-draft
+S088,kind of scared of living alone,fear,"Moved into the new hostel room today, with a balcony and everything",new room,same,self,LLM-draft
+S089,I was happy,joy,Dad finally came to watch my match,dad came to match,Dad|ROLE,family,LLM-draft
+S089,a little shocked,surprise,Dad finally came to watch my match,dad came to match,same,family,LLM-draft
+S090,I felt really nervous,fear,Had to give a surprise speech at Jai's farewell,surprise speech,Jai|PERSON,friends,LLM-draft
+S090,kind of proud when people clapped,pride,Had to give a surprise speech at Jai's farewell,surprise speech,same,friends,LLM-draft
+S091,Honestly feeling so grateful right now,gratitude,,none,none,none,LLM-draft
+S092,So angry right now,anger,,none,none,none,LLM-draft
+S093,Feeling a little anxious again today,fear,,none,today|DATE,none,LLM-draft
+S094,Just feeling really proud of myself,pride,,none,none,none,LLM-draft
+S095,Missing Nani so much,sadness,,none,Nani|ROLE,none,LLM-draft
+S096,,neutral,,none,Pune|LOCATION,none,LLM-draft
+S097,,neutral,,none,Today|DATE; Mom|ROLE,none,LLM-draft
+S098,,neutral,,none,COEP|ORG,none,LLM-draft
+S099,,neutral,,none,the plumber|ROLE; Thursday|DATE,none,LLM-draft
+S100,,neutral,,none,Raj|PERSON; Nagpur|LOCATION,none,LLM-draft
+S101,really scared i wont be able to play this season,fear,the physio said it might be a ligament thing,knee injury,today|DATE; the physio|ROLE,health,LLM-draft
+S102,so stressed,stress,paid 4500 for the lab kit and my account is at 600 now,low balance,none,money,LLM-draft
+S103,so angry rn,anger,my boyfriend said he was busy but posted a story at the cafe with his friends,partner lied,my boyfriend|ROLE,relationships,LLM-draft
+S104,feeling so light and rested today,contentment,slept a full 8 hours for the first time in weeks and woke up without the alarm,good sleep,today|DATE,health,LLM-draft
+S105,soooo happy,joy,got my first freelance payment of 8000 in the account,freelance payment,none,money,LLM-draft
+S106,i am so thankful for her,gratitude,my girlfriend remembered the tiny thing i said about the book and got it for me,thoughtful gift,my girlfriend|ROLE,relationships,LLM-draft
+S107,totally did not expect that,surprise,opened my bag at lunch and there was a note from didi saying all the best for the exam,sister's note,didi|ROLE,family,LLM-draft
+S108,i feel really bad about it,guilt,i skipped my sister's call again for the third time this week and she just left a voice note saying take care,ignored sister's calls,my sister|ROLE; this week|DATE,family,LLM-draft
+S109,honestly furious,anger,the hostel mess served the same watery dal again and two people got stomach infection,mess food,none,health,LLM-draft
+S110,so proud of myself,pride,cooked a full meal for six people for my birthday party and nobody complained,cooked for party,none,self,LLM-draft
+S111,i feel so empty,sadness,we broke up after dinner,breakup,none,relationships,LLM-draft
+S112,really anxious,fear,the college sent a mail that the fee has to be paid in 5 days or i lose the seat,fee deadline,dad|ROLE,money,LLM-draft
+S113,i felt very at peace,contentment,sat on the terrace with my roommates and shared one maggi packet between four of us,terrace with friends,none,friends,LLM-draft
+S114,so stressed,stress,have a fever since last night and the viva is in two days,fever before viva,last night|DATE,health,LLM-draft
+S115,i am sooo happy my hands are still shaking,joy,i asked her to the farewell and she smiled and said yes,she said yes,none,relationships,LLM-draft
+S116,so annoyed,anger,the delivery guy charged 150 extra for a 500 rupee order and the app refund got rejected,delivery overcharge,the delivery guy|ROLE,money,LLM-draft
+S117,really grateful,gratitude,the nurse at the clinic stayed with me till my drip finished and even called my roommate,nurse stayed,the nurse|ROLE; my roommate|ROLE,health,LLM-draft
+S118,feeling so helpless,sadness,mummy cried on the phone about the roof leaking again and i cant even go home to help,leaking roof at home,mummy|ROLE,family,LLM-draft
+S119,did not see that coming at all,surprise,my manager forwarded my small script to the whole team as a best practice,script shared,my manager|ROLE,studies_work,LLM-draft
+S120,heart was pounding the whole first hour,fear,the invigilator announced that mobile phones found in pockets will be cancelled and i had mine in my jeans,phone in pocket,the invigilator|ROLE,studies_work,LLM-draft
+S121,proud of that,pride,ran 8k today at 6am without walking once and my watch said new record,new running record,today|DATE,health,LLM-draft
+S122,i still feel so guilty about it,guilt,i read my gf's messages while she was in the shower and found nothing,read her messages,my gf|ROLE,relationships,LLM-draft
+S123,so relieved today,contentment,the scan report came back clear,clear scan,today|DATE,health,LLM-draft
+S124,feeling heavy and tired,sadness,my roommate moved out and the room is empty,roommate left,my roommate|ROLE,friends,LLM-draft
+S125,i am worried about money again,stress,the stipend still has not come and rent is due this week,late stipend,this week|DATE,money,LLM-draft
+S126,really happy for riya,joy,she finally got the visa after two rejections,friend got visa,riya|PERSON,friends,LLM-draft
+S127,i feel embarrassed,guilt,i called the professor by the wrong name in front of everyone,wrong name,the professor|ROLE,studies_work,LLM-draft
+S128,angry at the landlord,anger,he came into the flat without telling us,landlord entered flat,the landlord|ROLE,other,LLM-draft
+S129,so proud of my bro,pride,he cleared the written exam on his first try,brother passed exam,my bro|ROLE,family,LLM-draft
+S130,kind of scared of my own thoughts tonight,fear,the doctor said my reports need a follow up,follow up reports,tonight|DATE; the doctor|ROLE,health,LLM-draft
+S131,i honestly got scared hearing that,fear,the nurse at the health centre checked my bp and said it is low,low blood pressure,today|DATE; the nurse|ROLE,health,LLM-draft
+S132,i am so ashamed of myself,guilt,the credit card bill came and it is 7200 more than i thought,high card bill,none,money,LLM-draft
+S133,still it hurt,sadness,my boyfriend did not reply to my text for the whole day and then sent a thumbs up in the night,partner's thumbs up,my boyfriend|ROLE,relationships,LLM-draft
+S134,i feel more calm than usual,contentment,managed to go for a walk for 30 mins after dinner with the new playlist,evening walk,none,health,LLM-draft
+S135,i am genuinely so happy,joy,my scholarship got renewed for another year,scholarship renewed,none,money,LLM-draft
+S136,honestly shocked,surprise,my roommate had cleaned the entire room and even folded my clothes,roommate cleaned,my roommate|ROLE,friends,LLM-draft
+S137,my chest feels tight whenever i open the document,stress,the dissertation draft is due in 3 days and my guide has not replied to my mail since friday,dissertation deadline,my guide|ROLE; friday|DATE,studies_work,LLM-draft
+S138,i just got so angry i left my food and went to my room,anger,papa told me again that my cousin earns more than me at the same age,compared to cousin,papa|ROLE; my cousin|ROLE,family,LLM-draft
+S139,felt really left out,sadness,my close group went for the trip to Goa and i could not go because of the fees,missed friends' trip,Goa|LOCATION,friends,LLM-draft
+S140,i walked out feeling taller than usual,pride,i said the answer out loud in the class even though i was not sure,answered in class,none,studies_work,LLM-draft
+S141,i feel really bad about it,guilt,i slept through my alarm and missed the morning lab,overslept lab,my lab partner|ROLE,studies_work,LLM-draft
+S142,i keep calculating how long we can manage like this,stress,my father's pension got delayed again this month,pension delayed,my father|ROLE; mummy|ROLE,money,LLM-draft
+S143,i felt so settled with her,contentment,she held my hand the whole time,quiet walk together,none,relationships,LLM-draft
+S144,i am really thankful for strangers like that,gratitude,three people ran to help and one of them even walked me to the clinic,strangers helped,none,health,LLM-draft
+S145,today is going to be a good day i just know it,joy,the supervisor accepted my abstract for the student conference,abstract accepted,the supervisor|ROLE; today|DATE,studies_work,LLM-draft
+S146,cannot stop shaking,fear,my grandfather fell in the bathroom last night and is at the hospital now,grandfather in hospital,my grandfather|ROLE; last night|DATE,family,LLM-draft
+S147,i was shouting on the phone like a madman,anger,the cab driver cancelled three times and then asked for extra to come,cab cancellations,the cab driver|ROLE,other,LLM-draft
+S148,i feel quietly happy,contentment,finished the last page of the book i had been reading for two months,finished book,none,self,LLM-draft
+S149,honestly just feel low,sadness,implicit,unknown,none,none,LLM-draft
+S150,i feel so far away from all of them,sadness,implicit,unknown,none,none,LLM-draft
+S151,feeling jittery since lunch,fear,implicit,unknown,none,none,LLM-draft
+S152,suddenly felt so light,joy,implicit,unknown,none,none,LLM-draft
+S153,i feel quite okay with everything,contentment,implicit,unknown,none,none,LLM-draft
+S154,feeling off today,stress,implicit,unknown,today|DATE,none,LLM-draft
+S155,got this wave of gratitude while brushing my teeth lol,gratitude,implicit,unknown,none,none,LLM-draft
+S156,irritated at nothing in particular,anger,implicit,unknown,none,none,LLM-draft
+S157,weirdly guilty tonight,guilt,implicit,unknown,tonight|DATE,none,LLM-draft
+S158,so proud of this week,pride,implicit,unknown,this week|DATE,none,LLM-draft
+S159,just nervous for no reason,fear,implicit,unknown,none,none,LLM-draft
+S160,i feel calm,contentment,implicit,unknown,none,none,LLM-draft
+S161,tired of trying so hard to look okay in front of everyone,stress,implicit,unknown,none,none,LLM-draft
+S162,my eyes got wet on the bus for no reason,sadness,implicit,unknown,none,none,LLM-draft
+S163,everything felt too bright and too fast,stress,implicit,unknown,none,none,LLM-draft
+S164,so relieved i laughed in the clinic,contentment,my report came back normal,normal report,the nurse|ROLE,health,LLM-draft
+S164,my chest got tight again,stress,"i got the bill, 3400 for tests that insurance will not cover",uncovered medical bill,same,money,LLM-draft
+S165,i was glowing the whole evening,joy,he finally introduced me to his parents on a video call and they were so sweet to me,met his parents,none,relationships,LLM-draft
+S165,i just went quiet,sadness,he said he is not ready to talk about the future,partner avoids future,same,relationships,LLM-draft
+S166,i felt such a relief,contentment,our internal review got postponed to friday,review postponed,friday|DATE; my team lead|ROLE,studies_work,LLM-draft
+S166,i got instantly anxious,fear,my team lead sent a message that the scope has doubled,scope doubled,same,studies_work,LLM-draft
+S167,i was so happy,joy,my roommate and i cooked dal khichdi at midnight and laughed so much that the warden knocked,midnight cooking,my roommate|ROLE; the warden|ROLE; my mom|ROLE; my cousin|ROLE,friends,LLM-draft
+S167,i got annoyed immediately,anger,my mom called and said my cousin is getting married and i must come home for ten days,forced wedding trip,same,family,LLM-draft
+S168,i feel really proud of how focused i was,pride,finished the first module in one sitting,finished module,next month|DATE,studies_work,LLM-draft
+S168,so stressed now,stress,"the course fee went through, nothing left till next month",fee deducted,same,money,LLM-draft
+S169,i was beaming,joy,she screamed so loud i had to hold the phone away,friend's reaction,my best friend|ROLE; april|DATE,friends,LLM-draft
+S169,i felt a heavy sadness thinking of leaving her,sadness,i would have to leave the city in april,leaving the city,same,friends,LLM-draft
+S170,really scared,fear,the doctor said my sugar levels are borderline and i need to watch my diet,borderline sugar,the doctor|ROLE; my sister|ROLE; sunday|DATE,health,LLM-draft
+S170,so supported and grateful,gratitude,my sister sent a message that she will do the meal planning with me every sunday,sister's support,same,family,LLM-draft
+S171,i felt a lump in my throat for like ten minutes,sadness,found out that my ex is getting engaged from an instagram story,ex engaged,my ex|ROLE; the trainer|ROLE,relationships,LLM-draft
+S171,i felt proud of myself,pride,the trainer said my form has improved a lot,gym form improved,same,health,LLM-draft
+S172,i was so angry i kept quiet,anger,the rent got increased by 3000 and my flatmates wanted to split it equally even though i have the smallest room,unfair rent split,the owner|ROLE,money,LLM-draft
+S172,i was surprised and a little grateful,surprise,the owner called and said he will reduce it by 1000 for me,owner reduced rent,same,money,LLM-draft
+S173,i was so angry i could not eat,anger,my lab partner copied the entire report from me and submitted it first,report copied,my lab partner|ROLE; the professor|ROLE,studies_work,LLM-draft
+S173,really proud,pride,the professor praised my viva and said it was the best in the batch,viva praised,same,studies_work,LLM-draft
+S174,i was so irritated,anger,"i missed the bus and had to walk 4 km in the sun, drenched in sweat",missed bus,none,other,LLM-draft
+S174,i felt so cared for,gratitude,my friends had saved me a seat and ordered my favourite tea,friends saved seat,same,friends,LLM-draft
+S175,my heart stopped,fear,my phone rang at 2 am and it was an unknown number,late night call,my cousin|ROLE,family,LLM-draft
+S175,i was a little annoyed,anger,he did not check the time,cousin's late call,same,family,LLM-draft
+S176,cried with relief,joy,got the biopsy report today and it is benign,benign report,today|DATE; my boss|ROLE; monday|DATE,health,LLM-draft
+S176,i felt my stomach drop,fear,my boss texted me that the client meeting is moved to monday morning,meeting moved,same,studies_work,LLM-draft
+S177,i could not stop smiling at my laptop,joy,i got a 92 in the entrance mock,mock score,none,studies_work,LLM-draft
+S177,makes my hands cold,fear,the thought of the real exam in two weeks,upcoming exam,same,studies_work,LLM-draft
+S178,it felt so good to treat them,joy,i paid for everyone with my own savings,treated friends,none,friends,LLM-draft
+S178,i felt a bit foolish,guilt,my balance is 340 and the month has 12 days left,low balance,same,money,LLM-draft
+S179,i felt so warm inside,contentment,my grandmother taught me how to make her special chutney and i wrote the whole recipe in my diary,cooking with grandmother,my grandmother|ROLE; mom|ROLE; nani|ROLE,family,LLM-draft
+S179,i could not sleep from worry,fear,mom told me that nani has not been taking her medicines properly,grandmother's health,same,family,LLM-draft
+S180,i was so relieved,contentment,she was honest and did not just ghost me,honest reply,none,relationships,LLM-draft
+S180,my heart feels so heavy,sadness,she said she needs time,not ready yet,same,relationships,LLM-draft
+S181,i am so frustrated,anger,the electricity bill in the pg came 2100 higher because someone left the heater on all week,high electricity bill,the pg uncle|ROLE,money,LLM-draft
+S181,made me calm down,contentment,the pg uncle gave us tea and said he will talk to everyone,calm landlord,same,other,LLM-draft
+S182,felt so careless,guilt,i overslept and missed the first half of the workshop,overslept workshop,the organiser|ROLE,studies_work,LLM-draft
+S182,i was surprised by how kind he was,surprise,the organiser let me join the second half and even shared the slides with me,kind organiser,same,studies_work,LLM-draft
+S183,honestly it felt so comforting,contentment,dadu told me the same story about the 1971 war for the tenth time today and i smiled through it,grandfather's story,dadu|ROLE; today|DATE; mummy|ROLE,family,LLM-draft
+S183,i got very scared,fear,he started coughing badly,grandfather coughing,same,health,LLM-draft
+S184,happy,joy,"got the placement offer but the location is Hyderabad, away from home",offer far from home,Hyderabad|LOCATION,studies_work,LLM-draft
+S184,anxious at once,fear,"got the placement offer but the location is Hyderabad, away from home",offer far from home,same,studies_work,LLM-draft
+S185,i am happy for her,joy,my best friend is getting married in december,friend's wedding,my best friend|ROLE; december|DATE,friends,LLM-draft
+S185,feel left behind,sadness,my best friend is getting married in december,friend's wedding,same,friends,LLM-draft
+S186,relieved,contentment,the doctor said the fracture will heal in 6 weeks without surgery,no surgery needed,the doctor|ROLE,health,LLM-draft
+S186,a little scared of the long recovery,fear,the doctor said the fracture will heal in 6 weeks without surgery,no surgery needed,same,health,LLM-draft
+S187,i smiled like a fool,joy,she sent me a long voice note saying she misses me,voice note,none,relationships,LLM-draft
+S187,felt a pang of guilt,guilt,she sent me a long voice note saying she misses me,voice note,same,relationships,LLM-draft
+S188,proud of myself,pride,"my salary came in today, the first one",first salary,today|DATE,money,LLM-draft
+S188,so nervous about managing it right,fear,"my salary came in today, the first one",first salary,same,money,LLM-draft
+S189,excited to meet someone new,joy,the professor announced the project groups and i got paired with someone i have never spoken to,new project partner,the professor|ROLE,studies_work,LLM-draft
+S189,nervous at the same time,fear,the professor announced the project groups and i got paired with someone i have never spoken to,new project partner,same,studies_work,LLM-draft
+S190,feeling really grateful tonight,gratitude,,none,tonight|DATE,none,LLM-draft
+S191,so relieved,contentment,,none,none,none,LLM-draft
+S192,so annoyed again,anger,,none,none,none,LLM-draft
+S193,feeling a bit lonely today,sadness,,none,today|DATE,none,LLM-draft
+S194,really excited,joy,,none,none,none,LLM-draft
+S195,,neutral,,none,none,none,LLM-draft
+S196,,neutral,,none,none,none,LLM-draft
+S197,,neutral,,none,Karan|PERSON; Pune|LOCATION,none,LLM-draft
+S198,,neutral,,none,mom|ROLE,none,LLM-draft
+S199,,neutral,,none,Infosys|ORG; tonight|DATE,none,LLM-draft
+S200,,neutral,,none,none,none,LLM-draft
+S201,Honestly proud of myself for actually finishing it,pride,Finally cleaned and reorganised my entire desk after weeks of putting it off,cleaned desk,Kishore Kumar|PERSON,self,LLM-draft
+S202,feeling really calm and loose,contentment,did yoga on the terrace for 20 mins today with the sunrise coming up,morning yoga,today|DATE,health,LLM-draft
+S203,really thankful,gratitude,Aarav lent me 3000 till the stipend comes without even asking why,friend lent money,Aarav|PERSON,money,LLM-draft
+S204,completely stunned,surprise,walked into the common room and the whole floor had put up balloons and a banner for my birthday,surprise birthday setup,none,friends,LLM-draft
+S205,so guilty,guilt,I picked up a pen from the bank counter and walked out with it without noticing,took a pen,none,other,LLM-draft
+S206,so happy,joy,Meera texted me good morning with a cat sticker and then sent a voice note singing off key,cute texts,Meera|PERSON; monday|DATE,relationships,LLM-draft
+S207,I am so stressed,stress,The client moved the demo from friday to wednesday and nobody told the backend team until the afternoon,demo moved earlier,friday|DATE; wednesday|DATE; Rohit|PERSON; tomorrow|DATE,studies_work,LLM-draft
+S208,really worried it might be something serious,fear,got a rash on my arms after the new detergent and it is spreading,spreading rash,none,health,LLM-draft
+S209,I felt completely at ease,contentment,Spent the whole afternoon at Priya's place helping her fix her bike and then eating fresh pakoras on the balcony,afternoon at friend's place,Priya|PERSON,friends,LLM-draft
+S210,so angry,anger,the airline cancelled my flight to Chennai an hour before departure and the refund will take 15 days,cancelled flight,Chennai|LOCATION,other,LLM-draft
+S211,feeling really hollow about it,sadness,I deleted all my old photos from first year because the storage was full and later realised the folder with the trip pictures was gone too,lost old photos,none,self,LLM-draft
+S212,so proud,pride,Did my first full pull-up at the gym today,first pull-up,today|DATE,health,LLM-draft
+S213,totally did not expect that,surprise,checked my account before buying lunch and there was an extra 2500 there,unexpected refund,none,money,LLM-draft
+S214,i am so happy i cannot even type properly,joy,Our startup pitch at the Pune hackathon got picked for the final round out of 60 teams,pitch selected for final,Pune|LOCATION,studies_work,LLM-draft
+S215,so stressed,stress,the printer jammed 5 mins before the submission deadline and the queue behind me kept growing,printer jam,none,other,LLM-draft
+S216,feel terrible about it,guilt,I forgot to wish Dev on his birthday and only realised at night when everyone had already posted stories,forgot birthday wish,Dev|PERSON,friends,LLM-draft
+S217,feeling snug and quiet,contentment,had a long hot shower and then read in bed with the lamp on,cosy evening,none,self,LLM-draft
+S218,I am so angry and tired of explaining the same thing again and again,anger,Ankit told me he would call at nine and then did not call at all,missed call,Ankit|PERSON,relationships,LLM-draft
+S219,sooo happy lol,joy,found a 500 note in my old jeans pocket while doing laundry,found money,none,other,LLM-draft
+S220,so stressed about how to manage both,stress,The physiotherapy exercises take forty minutes twice a day and my elbow still hurts when i type,elbow pain and assignment,none,health,LLM-draft
+S221,grateful for people like her,gratitude,Neha stayed on call with me till 2 am while i fixed my resume,friend stayed on call,Neha|PERSON,friends,LLM-draft
+S222,proud of myself for not skipping it like i usually do,pride,I gave my first ever talk at the Kolkata book club about the novel i read last year,first book club talk,Kolkata|LOCATION; last year|DATE,self,LLM-draft
+S223,completely shocked,surprise,the stranger sitting next to me on the train turned out to be from my own school batch,met batchmate on train,Nagpur|LOCATION,other,LLM-draft
+S224,I feel so guilty about wasting money,guilt,I ordered a 1800 rupee jacket online even though i had promised myself no shopping till next month,impulse purchase,next month|DATE,money,LLM-draft
+S225,Really thankful,gratitude,The corner pharmacy gave me my medicines at the old price even though the rate had gone up,pharmacy kept old price,next week|DATE,health,LLM-draft
+S226,feeling really low now,sadness,scrolled through my old chat with Riya for an hour,old chat,Riya|PERSON,friends,LLM-draft
+S227,"It felt so natural, so calm",contentment,Kabir and I cooked together for the first time and the pasta was a bit salty but we ate it all anyway,cooking together,Kabir|PERSON,relationships,LLM-draft
+S228,what a shock,surprise,got 94 in the paper i thought i had failed,unexpected high marks,none,studies_work,LLM-draft
+S229,so stressed about the presentation i have to give with unwashed hair,stress,The water supply in our building stopped on saturday and has not come back,no water supply,saturday|DATE; monday|DATE,other,LLM-draft
+S230,so happy to see them,joy,Arjun and Tanya came to Indore just to surprise me for the weekend,friends visited,Arjun|PERSON; Tanya|PERSON; Indore|LOCATION,friends,LLM-draft
+S231,I feel like i keep letting myself down,guilt,I promised myself i would wake up at 6 and go for a run and then i hit snooze five times,broke morning promise,none,self,LLM-draft
+S232,feeling so settled,contentment,my vitamin levels came back normal in the new report,normal vitamin levels,none,health,LLM-draft
+S233,so annoyed at this useless bot,anger,Zomato charged me twice for the same order and the support chat kept repeating the same line,double charge,Zomato|ORG,money,LLM-draft
+S234,"I laughed out loud on the street, so happy",joy,The monsoon started in Mumbai today and i got completely drenched on the way back from the station,first rain,Mumbai|LOCATION; today|DATE,other,LLM-draft
+S235,proud,pride,got selected as the department rep for the national symposium,selected for symposium,none,studies_work,LLM-draft
+S236,scared it is bad news,fear,Sana said we need to talk about something important tonight,important talk pending,Sana|PERSON; tonight|DATE,relationships,LLM-draft
+S237,so stressed and not even doing anything about it,stress,I opened the planner and saw the list of things i had not done for the whole week,pile of pending tasks,none,self,LLM-draft
+S238,i was honestly shocked,surprise,Karan walked up and handed me the notebook i lost two months ago,lost notebook returned,Karan|PERSON,friends,LLM-draft
+S239,feeling very peaceful,contentment,caught the sunset from the metro bridge on my way back,sunset,none,other,LLM-draft
+S240,so irritated that i trusted it blindly,anger,the diet chart i got from the gym was totally wrong for me and i followed it for a week,wrong diet chart,none,health,LLM-draft
+S241,so thankful today,gratitude,Tanya stayed back after class to explain the whole chapter again,friend explained chapter,today|DATE; Tanya|PERSON,friends,LLM-draft
+S242,feeling pretty low,sadness,my project got rejected at the review and i do not know how to fix it,project rejected,none,studies_work,LLM-draft
+S243,I am nervous about the blood test tomorrow,fear,last time they could not find my vein and poked me four times,bad past blood test,tomorrow|DATE,health,LLM-draft
+S244,kinda proud of myself,pride,i spoke up in the meeting even though my voice was shaking,spoke up,none,studies_work,LLM-draft
+S245,so irritated at Rahul,anger,he keeps parking his bike in front of my gate,blocked gate,Rahul|PERSON,other,LLM-draft
+S246,I feel awful,guilt,i laughed at Isha's presentation without realising she could see me,laughed at presentation,Isha|PERSON,friends,LLM-draft
+S247,so shocked right now,surprise,the results are out a week early and i passed everything,early results,none,studies_work,LLM-draft
+S248,feeling pretty content tonight,contentment,"the rent is paid, the fridge is full and nothing is due",no pending bills,tonight|DATE,money,LLM-draft
+S249,I am stressed about the loan form,stress,it needs three signatures and i have only got one,loan form signatures,none,money,LLM-draft
+S250,really happy for Zoya,joy,she finally got her first paycheque and treated everyone,friend's first paycheque,Zoya|PERSON,friends,LLM-draft
+S251,so lonely in this new city,sadness,everyone from my batch got posted to other places,friends posted elsewhere,none,friends,LLM-draft
+S252,feeling embarrassed,guilt,i mixed up two people's names at the meetup and one of them noticed,mixed up names,none,other,LLM-draft
+S253,grateful for this quiet weekend,gratitude,i really needed time away from the screens,screen break,none,self,LLM-draft
+S254,pretty anxious about the audit tomorrow,fear,half the files are still not uploaded,files not uploaded,tomorrow|DATE,studies_work,LLM-draft
+S255,so proud of the hostel team,pride,we cleaned the entire block in one afternoon and it actually looks nice,cleaned the block,none,friends,LLM-draft
+S256,feeling calm today,contentment,the sea breeze at Marine Drive cleared my head after a really long week,sea breeze walk,today|DATE; Marine Drive|LOCATION,other,LLM-draft
+S257,stressed,stress,the wifi has been down for two days and i have an online exam tonight,wifi down before exam,tonight|DATE,other,LLM-draft
+S258,feeling really left out and a bit stupid for even checking,sadness,"They did not tell me about it, i saw the group photo on instagram later",left out of meetup,Aditi|PERSON,friends,LLM-draft
+S259,scared to tell anyone,fear,I woke up with chest pain at 3 am and sat on the floor till it passed,chest pain at night,none,health,LLM-draft
+S260,honestly so proud of both of us,pride,Our paper was accepted at the student conference in Delhi after two rounds of revision,paper accepted,Delhi|LOCATION; Rohit|PERSON; Today|DATE,studies_work,LLM-draft
+S261,so stressed,stress,the month is only half over and i have 800 rupees left,money running out,none,money,LLM-draft
+S262,i am so grateful to have him,gratitude,Farhan noticed that i had skipped lunch and showed up at my hostel with two parathas in foil,brought food,Farhan|PERSON,relationships,LLM-draft
+S263,i was seething the whole way,anger,the cab app showed 4 mins away for twenty minutes straight,cab app delays,none,other,LLM-draft
+S264,i felt weirdly full and quiet,contentment,Spent the evening just sitting on the roof watching the kites go by,evening on roof,none,self,LLM-draft
+S265,i feel like such a bad friend,guilt,i borrowed Sam's charger last week and lost it in the lab,lost friend's charger,Sam|PERSON; last week|DATE; Today|DATE,friends,LLM-draft
+S266,what a surprise,surprise,the report said my number has actually decreased since last time,eye number decreased,none,health,LLM-draft
+S267,really scared i will fail,fear,The placement cell announced the aptitude test for Wipro on thursday,aptitude test announced,Wipro|ORG; thursday|DATE,studies_work,LLM-draft
+S268,it just feels really heavy tonight,sadness,her train got cancelled due to the floods near Kerala,visit cancelled,Tara|PERSON; This weekend|DATE; Kerala|LOCATION; tonight|DATE,relationships,LLM-draft
+S269,i am unreasonably happy about a pressure cooker,joy,we won the tambola at the society event and the prize was a pressure cooker,won tambola,none,other,LLM-draft
+S270,I feel like a fraud,guilt,I told the group i had finished my part of the report when i had only done half,lied about report,none,studies_work,LLM-draft
+S271,so happy,joy,my cashback finally came through,cashback received,none,money,LLM-draft
+S272,i feel like my head has finally settled,contentment,Slept at 10 and woke up at 6 and went for a slow walk in the park with a flask of tea,early walk,none,health,LLM-draft
+S273,"so stressed, i feel like cancelling the whole thing",stress,the group trip planning has turned into a mess,messy trip planning,none,friends,LLM-draft
+S274,completely stunned,surprise,opened the door to find a huge cardboard box on the doorstep,mystery package,none,other,LLM-draft
+S275,i keep feeling a lump in my throat,sadness,It was my last day at the old flat,moved out,none,self,LLM-draft
+S276,so happy,joy,My internship offer from Flipkart came this morning and the stipend is more than i expected,internship offer,Flipkart|ORG; this morning|DATE; Isha|PERSON,studies_work,LLM-draft
+S277,i am so angry i cannot even look at the group,anger,Veer posted my private photo on the class group without asking,photo shared without consent,Veer|PERSON,friends,LLM-draft
+S278,i just feel like talking to nobody,sadness,implicit,unknown,today|DATE,none,LLM-draft
+S279,restless since the morning,stress,implicit,unknown,none,none,LLM-draft
+S280,a bright feeling since i woke up,joy,implicit,unknown,none,none,LLM-draft
+S281,so cranky since morning,anger,implicit,unknown,none,none,LLM-draft
+S282,i feel warm and quiet,contentment,implicit,unknown,none,none,LLM-draft
+S283,feeling oddly guilty today,guilt,implicit,unknown,today|DATE,none,LLM-draft
+S284,I woke up grateful,gratitude,implicit,unknown,none,none,LLM-draft
+S285,anxious about nothing,fear,implicit,unknown,none,none,LLM-draft
+S286,so tired of everything today,stress,implicit,unknown,today|DATE,none,LLM-draft
+S287,I cried a little in the shower,sadness,implicit,unknown,none,none,LLM-draft
+S288,kinda proud of how the week went,pride,implicit,unknown,none,none,LLM-draft
+S289,kinda surprised at how calm i am today,surprise,implicit,unknown,today|DATE,none,LLM-draft
+S290,feeling a bit down after dinner,sadness,implicit,unknown,none,none,LLM-draft
+S291,The mind was just blank and happy,joy,implicit,unknown,none,none,LLM-draft
+S292,irritated all through the lecture,anger,implicit,unknown,none,none,LLM-draft
+S293,I felt a wave of pride seeing my reflection in the shop window,pride,implicit,unknown,none,none,LLM-draft
+S294,the night feels heavy,sadness,implicit,unknown,none,none,LLM-draft
+S295,so jumpy today,fear,implicit,unknown,today|DATE,none,LLM-draft
+S296,"feeling guilty about nothing in particular, again",guilt,implicit,unknown,none,none,LLM-draft
+S297,i feel completely fine,contentment,implicit,unknown,none,none,LLM-draft
+S298,just thankful,gratitude,implicit,unknown,tonight|DATE,none,LLM-draft
+S299,overwhelmed all week,stress,implicit,unknown,wednesday|DATE,none,LLM-draft
+S300,I was so surprised,surprise,Our flight to Jaipur got upgraded to business class for no reason,flight upgrade,Jaipur|LOCATION,other,LLM-draft
+S300,I got really stressed,stress,at the gate I realised my laptop charger was in the checked bag and the presentation was in two hours,charger in checked bag,same,studies_work,LLM-draft
+S301,I was so grateful,gratitude,Aarti covered for me at the front desk when i was late and nobody noticed,colleague covered,Aarti|PERSON,studies_work,LLM-draft
+S301,i could not shake the guilty feeling for the rest of the day,guilt,i had told her a lie about why i was late,lied about being late,same,studies_work,LLM-draft
+S302,I felt really proud,pride,I finished my first full month of budgeting and stayed under the limit by 400 rupees,stayed under budget,Tanmay|PERSON,money,LLM-draft
+S302,that familiar tightness,stress,the electricity bill landed on my phone and wiped out the saving,electricity bill,same,money,LLM-draft
+S303,i felt so full and relaxed,contentment,We had a lazy sunday brunch with the old group at the new place near FC Road,sunday brunch,sunday|DATE; FC Road|LOCATION; Pooja|PERSON; Berlin|LOCATION; next month|DATE,friends,LLM-draft
+S303,i went quiet,sadness,someone mentioned that Pooja is moving to Berlin next month,friend moving abroad,same,friends,LLM-draft
+S304,I was honestly stunned,surprise,A stranger paid for my chai at a stall in Hampi and refused to take the money back,stranger paid for chai,Hampi|LOCATION,other,LLM-draft
+S304,so happy,joy,my waitlisted train ticket got confirmed,ticket confirmed,same,other,LLM-draft
+S305,i felt terrible the whole evening,guilt,I yelled at Kunal for using my charger without asking and he looked really hurt,yelled at friend,Kunal|PERSON,friends,LLM-draft
+S305,everything felt okay again,contentment,he came with two cups of tea and we sat quietly on the stairs,made up over tea,same,friends,LLM-draft
+S306,I was so angry i almost shouted at the reception,anger,The clinic made me wait for three hours and then said the report is not ready,long clinic wait,none,health,LLM-draft
+S306,i felt very thankful for the small kindness,gratitude,an old woman in the queue shared her biscuits with me and asked about my day,stranger shared biscuits,same,health,LLM-draft
+S307,I was terrified before the viva,fear,i had not slept the whole night,no sleep before viva,none,studies_work,LLM-draft
+S307,i felt really proud of myself,pride,i was explaining the circuit diagram with confidence,confident viva answers,same,studies_work,LLM-draft
+S308,i felt a lump in my throat,sadness,It is being sold next month,village house sold,today|DATE; next month|DATE; Vikram|PERSON,family,LLM-draft
+S308,i was so thankful he thought of me,gratitude,Vikram sent me a voice note with the sound of the old temple bells he recorded last time,voice note of bells,same,family,LLM-draft
+S309,i was so happy walking beside the lake with her,joy,We went for our first trip together to Udaipur,first trip together,Udaipur|LOCATION; Sagar|PERSON,relationships,LLM-draft
+S309,i felt bad for lying,guilt,i had told my friends i was too busy to attend Sagar's engagement,lied about engagement,same,friends,LLM-draft
+S310,i feel so stressed all day,stress,I have been sleeping 4 hours a night because of the deadline,sleep loss,Yesterday|DATE; Chaitanya|PERSON,health,LLM-draft
+S310,feeling sorted and calm,contentment,Yesterday i finally slept 9 hours at Chaitanya's place,long sleep,same,health,LLM-draft
+S311,i was fuming,anger,The bank deducted 590 as 'annual charges' without any message,bank deduction,today|DATE,money,LLM-draft
+S311,I was very surprised,surprise,it actually came back in an hour,refund in an hour,same,money,LLM-draft
+S312,my knees got weak,fear,my name was announced,name called on stage,none,self,LLM-draft
+S312,I felt so proud walking back to my seat,pride,I got a loud round of applause at the end,applause,same,self,LLM-draft
+S313,so touched i could not stop smiling,gratitude,Mira wrote me a three page letter on my last day at the PG,goodbye letter,Mira|PERSON,friends,LLM-draft
+S313,the sadness hit slowly,sadness,the train crossed the city limits and i realised how far i had come from all of them,leaving friends behind,same,friends,LLM-draft
+S314,felt like the worst senior ever,guilt,I snapped at a junior during the lab and i immediately regretted it,snapped at junior,none,studies_work,LLM-draft
+S314,i felt proud that i could say sorry without making excuses,pride,i apologised in front of everyone and he smiled,apologised publicly,same,studies_work,LLM-draft
+S315,I was shocked,surprise,the farewell has been advanced to friday and nobody was ready,farewell advanced,friday|DATE; Shreya|PERSON; Lucknow|LOCATION,friends,LLM-draft
+S315,i felt sad that the group will be incomplete,sadness,Shreya said she cannot attend because of her exam in Lucknow,friend cannot attend,same,friends,LLM-draft
+S316,i felt so peaceful,contentment,The bus was empty and i got the window seat with golden evening light,empty bus,none,other,LLM-draft
+S316,i was boiling with anger,anger,two men got on and started playing loud videos without earphones,loud videos on bus,same,other,LLM-draft
+S317,i have never been so happy in this department,joy,Our team got the best project award in the final review,project award,Prof. Desai|PERSON,studies_work,LLM-draft
+S317,so stressed,stress,the report must be submitted in two days with corrections,report corrections,same,studies_work,LLM-draft
+S318,My stomach clenches every time i look at the calendar,fear,I have to get the dental surgery done on monday,dental surgery,monday|DATE; Ruchi|PERSON,health,LLM-draft
+S318,i felt so lucky to have her in my life,gratitude,Ruchi booked me a cab and said she will wait outside the whole time,friend's support,same,health,LLM-draft
+S319,felt completely empty,sadness,We had the breakup talk in the park and it was calm,calm breakup,none,relationships,LLM-draft
+S319,oddly at peace,contentment,"i made khichdi, opened the window",quiet night after,same,self,LLM-draft
+S320,i was so annoyed,anger,Manav kept interrupting me in the meeting to correct small things,interrupted in meeting,Manav|PERSON,studies_work,LLM-draft
+S320,i felt like a coward,guilt,i said something snarky about him in the group and then saw he was reading it,snarky message,same,studies_work,LLM-draft
+S321,i could not believe it,surprise,my short story got shortlisted in the college magazine contest,story shortlisted,none,self,LLM-draft
+S321,feeling quietly proud,pride,Out of 70 entries mine was one of five,top five,same,self,LLM-draft
+S322,my stomach is in knots,stress,Rent is due tomorrow and my freelance client has not paid yet,rent due,tomorrow|DATE,money,LLM-draft
+S322,so relieved and happy,joy,the payment notification popped up,payment received,same,money,LLM-draft
+S323,i started panicking,fear,The lift stopped between floors for ten minutes,stuck in lift,none,other,LLM-draft
+S323,i was so surprised i forgot to be scared,surprise,there was a person standing there with a cake box,cake outside lift,same,other,LLM-draft
+S324,felt so proud i posted it on my story,pride,I completed my 30 day workout streak without missing a day,30 day streak,none,health,LLM-draft
+S324,felt miserable,sadness,my knee gave up and the scan said no running for a month,knee injury,same,health,LLM-draft
+S325,I was so grateful,gratitude,Pranav shared his entire notes folder with me and said use whatever you want,shared notes,Pranav|PERSON,studies_work,LLM-draft
+S325,the stress hit immediately,stress,i opened it and saw 600 pages for a paper in 2 days,too many pages,same,studies_work,LLM-draft
+S326,so irritated,anger,The neighbours were drilling at 7 am on a sunday and i could not sleep,early drilling,sunday|DATE,other,LLM-draft
+S326,i felt completely fine,contentment,bought a hot jalebi on the way back,hot jalebi,same,self,LLM-draft
+S327,I was so surprised,surprise,Divya showed up at my door with a gift for my promotion,gift from friend,Divya|PERSON; last month|DATE,friends,LLM-draft
+S327,the guilt came rushing in,guilt,i had skipped her housewarming last month,skipped housewarming,same,friends,LLM-draft
+S328,i have been jumping around the room since,joy,"I booked a solo trip to Manali, my first ever",solo trip booked,Manali|LOCATION,self,LLM-draft
+S328,really worried,fear,the weather updates about landslides,landslide warnings,same,self,LLM-draft
+S329,feeling light and focused,contentment,The library was quiet and i finished two chapters with a hot coffee,focused study,next week|DATE,studies_work,LLM-draft
+S329,my chest tightened,stress,i have three tests next week and only one set of notes,three tests coming,same,studies_work,LLM-draft
+S330,excited about the money,joy,i got the offer from Amazon but the joining is in Hyderabad,offer in another city,Amazon|ORG; Hyderabad|LOCATION,studies_work,LLM-draft
+S330,sad about leaving everyone,sadness,i got the offer from Amazon but the joining is in Hyderabad,offer in another city,same,studies_work,LLM-draft
+S331,i am overjoyed for her,joy,Khushi told me she is pregnant,friend's news,Khushi|PERSON,friends,LLM-draft
+S331,a bit scared about how fast everyone is moving ahead,fear,Khushi told me she is pregnant,friend's news,same,friends,LLM-draft
+S332,i felt proud,pride,the trek to Kedarkantha was done in five days,finished trek,Kedarkantha|LOCATION,self,LLM-draft
+S332,strangely empty on the last evening,sadness,the trek to Kedarkantha was done in five days,finished trek,same,self,LLM-draft
+S333,I am shocked,surprise,my screen time report says i spent 9 hours on my phone yesterday,high screen time,yesterday|DATE,self,LLM-draft
+S333,a bit ashamed,guilt,my screen time report says i spent 9 hours on my phone yesterday,high screen time,same,self,LLM-draft
+S334,i felt thrilled,joy,the rain stopped just as the match began,rain stopped,none,other,LLM-draft
+S334,relieved at once,contentment,the rain stopped just as the match began,rain stopped,same,other,LLM-draft
+S335,hurt,sadness,Gauri forgot my birthday completely,forgotten birthday,Gauri|PERSON,friends,LLM-draft
+S335,angry,anger,Gauri forgot my birthday completely,forgotten birthday,same,friends,LLM-draft
+S336,so relieved,contentment,the lab results came back clean,clean results,none,health,LLM-draft
+S336,exhausted from all the worrying i did for nothing,stress,the lab results came back clean,clean results,same,health,LLM-draft
+S337,proud of myself today,pride,,none,today|DATE,none,LLM-draft
+S338,so guilty,guilt,,none,none,none,LLM-draft
+S339,honestly overwhelmed right now,stress,,none,none,none,LLM-draft
+S340,what a shock,surprise,,none,none,none,LLM-draft
+S341,feeling peaceful after tea,contentment,,none,none,none,LLM-draft
+S342,feeling really thankful tonight,gratitude,,none,tonight|DATE,none,LLM-draft
+S343,so scared,fear,,none,none,none,LLM-draft
+S344,,neutral,,none,Wipro|ORG; Hinjewadi|LOCATION,none,LLM-draft
+S345,,neutral,,none,Thane|LOCATION,none,LLM-draft
+S346,,neutral,,none,Today|DATE,none,LLM-draft
+S347,,neutral,,none,none,none,LLM-draft
+S348,,neutral,,none,Ishaan|PERSON; Pooja|PERSON,none,LLM-draft
+S349,,neutral,,none,none,none,LLM-draft
+S350,,neutral,,none,Pune|LOCATION; Mumbai|LOCATION; IIT Bombay|ORG,none,LLM-draft

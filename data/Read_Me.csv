@@ -1,0 +1,17 @@
+Synthetic journal dataset for emotion-cause pair extraction (ECPE)
+""
+What this is
+"350 synthetic journal-style entries (IDs S001 to S350; batch 1 = S001 to S100, batch 2 = S101 to S200, batch 3 = S201 to S350, see the batch column) with draft labels, written by an LLM (Claude) in your two-sheet format."
+"Use it for training and development. Do NOT use it as your final test set: LLM text is cleaner and more explicit than real journals, so scores on it will look inflated."
+""
+Status of the labels
+All labels are LLM drafts (annotator = LLM-draft). A human must review them before they count as gold labels. Automatic checks already confirmed that every clause and entity is copied exactly from its entry and every label is from the fixed lists.
+""
+Sheets
+Entries: one row per journal entry. Edit Text and the planned_ columns only before annotation starts. Columns G and H are formulas.
+Pairs: one row per emotion-cause pair. An entry with two pairs has two rows. The ner column is filled on the first row of each entry; later rows say same.
+Guidelines: the label lists and rules used to write these labels.
+"Balance: live counts (formulas) of structures, emotions, aspects, lengths and entities against the plan. Blue numbers are the plan targets; change them if your plan changes."
+""
+How to add your own human-written entries
+"Add a row to Entries with a new ID (for example H001), Source = Human, and the whole entry in one cell. Add its pairs to Pairs using the same ID. The Balance sheet updates automatically (its ranges cover rows up to 1000)."

@@ -1,0 +1,48 @@
+Emotion labels (one label per emotion clause),,
+label,meaning,example clause
+joy,"Happiness, excitement, being pleased",I am so excited I cannot sit still
+contentment,"Mild, calm satisfaction",Feeling calm and content
+pride,Pleased with own or others' achievement,Felt really proud of myself
+gratitude,Thankful toward someone or something,so grateful for her
+sadness,"Sadness, disappointment, loneliness, helplessness",I am really sad
+anger,"Anger, frustration, irritation, betrayal",I was furious
+fear,Fear or anxiety about something specific or uncertain; panic,Honestly scared
+stress,"General overload or pressure, not a specific threat",Overwhelmed and cannot even think straight
+guilt,"Guilt, shame, embarrassment",I feel so guilty
+surprise,Surprised or shocked because something was unexpected,Totally shocked
+neutral,No feeling stated; a plain log of the day,(no emotion clause)
+,,
+Tie-breakers,,
+fear vs stress,Fear points at a specific threat or uncertainty. Stress is general overload.,
+joy vs contentment,Joy is energetic. Contentment is calm.,
+sadness vs guilt,Guilt involves something the writer did wrong or felt embarrassed about.,
+surprise vs distress,"If the clause is mainly about something unexpected, use surprise. If it is mainly about distress, use the negative emotion.",
+"shocked, astonished, taken aback",All map to surprise. There is no separate shocked label.,
+,,
+Cause area (aspect),,
+studies_work,"College, exams, assignments, jobs, interviews, projects",
+health,"Fitness, sleep, illness, medical visits",
+family,"Parents, siblings, relatives, home",
+friends,"Friends, roommates, neighbours, classmates",
+relationships,Romantic partner,
+self,"Habits, identity, motivation, memories, personal milestones",
+money,"Rent, fees, stipend, bills, purchases",
+other,"Commute, lost items, everyday events that fit nothing above",
+none,"No cause stated, or cause is implicit",
+,,
+"Entity types (ner column, format text|TYPE separated by semicolons)",,
+PERSON,"Named people: Raj, Neha, Prof. Mehta",
+ROLE,"A single person referred to by role or kinship: Mom, Dadi, My sister, my cousin, The doctor, Sir. Plural groups (my friends, relatives) are not tagged.",
+LOCATION,"Named places only: Pune, Nagpur, US. Generic places (library, canteen, home, college) are not tagged.",
+ORG,"Named organisations: TCS, Infosys, COEP. Generic words like college are not tagged.",
+DATE,"Explicit time references: today, tonight, last night, this morning, Friday, March, next week. Bare words like morning or evening, and durations like two hours, are not tagged.",
+none,Write none when the entry has no entities. Blank always means not yet annotated.,
+,,
+Row conventions,,
+Copy exactly,"emotion_clause, cause_clause and entity text are copied exactly from the entry, including typos.",
+Implicit cause,"cause_clause = implicit, cause = unknown, aspect = none.",
+Emotion only,"cause_clause left empty, cause = none, aspect = none.",
+No emotion,"emotion_clause left empty, emotion = neutral, cause_clause empty.",
+ner column,Filled on the first row of an entry. Later rows of the same entry say same.,
+Shared cause,"When one cause triggers two emotions, both rows repeat the same cause_clause.",
+Language,"English with a few Indian kinship terms (Maa, Dadi, Nani, Papa, Mummy, Aunty). Heavier code-mixing (Hinglish) is not included. Decide as a team whether to add it.",

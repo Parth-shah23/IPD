@@ -22,3 +22,15 @@ evaluation_log.csv
 
 # Python bytecode cache
 __pycache__/
+
+# ECPE model weights and evaluation outputs (generated locally)
+best_ecpe_model/
+ecpe_results*/
+!ecpe_results_hypotheses/
+
+# ECPE model bundle (516 MB, over GitHub's file limit; share via Drive)
+ecpe_model.pkl
+
+# Downloaded benchmark corpora (third-party text, not redistributed)
+data_external/
+ecpe_offshelf_model/
