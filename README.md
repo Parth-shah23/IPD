@@ -111,16 +111,25 @@ python ecpe_predict.py
 ## Hypothesis experiments (H1 transfer, H2 adaptation)
 
 ```powershell
-python run_hypotheses.py
+python run_hypotheses.py                     # standard ECPE benchmark (default)
+python run_hypotheses.py --benchmark gne     # GoodNewsEveryone news headlines
 ```
 
-Downloads the GoodNewsEveryone news-headline corpus (Bostan et al., LREC 2020;
-annotations CC BY 4.0) into the ignored `data_external/` folder, trains the
-off-the-shelf model on news only, scores it on news and journal entries (H1),
-then fine-tunes it on journal entries with the same 5 folds as
-`train_ecpe.py --cv` and compares (H2). If `ecpe_results/oof_predictions.jsonl`
-is present, journal-only training is a second H2 comparison. Results go to
-`ecpe_results_hypotheses/`. Run `train_ecpe.py --cv` first, and use a GPU.
+`--benchmark ecpe` downloads the standard ECPE benchmark (Xia and Ding, ACL
+2019; 1,945 Chinese news documents) and machine-translates each clause to
+English with `Helsinki-NLP/opus-mt-zh-en`, so clause labels carry over
+exactly. Translations are cached in the ignored `data_external/` folder.
+Documents where an emotion clause is its own cause are excluded (the span
+tagger cannot label one span as both), and the authors' fold 1 split is used.
+`--benchmark gne` uses GoodNewsEveryone (Bostan et al., LREC 2020; annotations
+CC BY 4.0).
+
+The script trains the off-the-shelf model on the benchmark only, scores it on
+the benchmark test split and on journal entries (H1), then fine-tunes it on
+journal entries with the same 5 folds as `train_ecpe.py --cv` and compares
+(H2). If `ecpe_results/oof_predictions.jsonl` is present, journal-only training
+is a second H2 comparison. Results go to `ecpe_results_hypotheses_<benchmark>/`.
+Run `train_ecpe.py --cv` first, and use a GPU.
 
 Until the human-written test set exists, the journal side of both tests uses
 the synthetic entries, so these are development results.

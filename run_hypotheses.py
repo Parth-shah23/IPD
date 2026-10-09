@@ -1,13 +1,14 @@
 """Test H1 (transfer) and H2 (adaptation) from the project plan.
 
-1. Train the span model on GoodNewsEveryone news headlines only: the
+1. Train the span model on the benchmark only (--benchmark ecpe: Xia and Ding
+   2019, translated to English; --benchmark gne: GoodNewsEveryone): the
    off-the-shelf model.
-2. Score it on the GNE test split and on every journal entry (it has never
+2. Score it on the benchmark test split and on every journal entry (it has never
    seen a journal entry).
 3. Fine-tune it on journal entries with the same 5 folds as
    `train_ecpe.py --cv` and score the held-out folds.
 
-H1: off-the-shelf pair F1 on journals is lower than on the news benchmark
+H1: off-the-shelf pair F1 on journals is lower than on the benchmark
     (one-sided bootstrap, entries resampled independently in each set).
 H2: fine-tuned pair F1 on journals is higher than off-the-shelf pair F1
     (one-sided paired bootstrap over journal entries, Holm across comparisons).
@@ -24,6 +25,7 @@ import numpy as np
 import torch
 from sklearn.model_selection import StratifiedKFold
 
+from benchmark_ecpe import load_ecpe_splits
 from benchmark_gne import load_gne_examples, split_gne
 from ecpe_model import DATA_FILE, MODEL_CHECKPOINT, load_examples, predict, save_model
 from train_ecpe import METRICS, SEED, entry_counts, f1_from_counts, set_seed, split_entries, train_model
@@ -121,8 +123,10 @@ def main():
     parser.add_argument("--data", default=DATA_FILE, help="Journal workbook (synthetic now; human test set later).")
     parser.add_argument("--model", default=MODEL_CHECKPOINT)
     parser.add_argument("--journal-only-oof", default="ecpe_results/oof_predictions.jsonl")
-    parser.add_argument("--results-dir", default="ecpe_results_hypotheses")
-    parser.add_argument("--offshelf-dir", default="ecpe_offshelf_model")
+    parser.add_argument("--benchmark", choices=["ecpe", "gne"], default="ecpe",
+                        help="ecpe: Xia and Ding (2019), translated to English; gne: GoodNewsEveryone headlines.")
+    parser.add_argument("--results-dir", help="Default: ecpe_results_hypotheses_<benchmark>.")
+    parser.add_argument("--offshelf-dir", help="Default: ecpe_offshelf_model_<benchmark>.")
     parser.add_argument("--folds", type=int, default=5)
     parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--min-epochs", type=int, default=6)
@@ -132,21 +136,26 @@ def main():
     parser.add_argument("--lr", type=float, default=3e-5)
     parser.add_argument("--head-lr", type=float, default=1e-4)
     parser.add_argument("--max-entries", type=int, help="Quick smoke tests only.")
-    parser.add_argument("--max-headlines", type=int, help="Quick smoke tests only.")
+    parser.add_argument("--max-headlines", type=int, help="Quick smoke tests only (benchmark documents).")
     args = parser.parse_args()
+    args.results_dir = args.results_dir or f"ecpe_results_hypotheses_{args.benchmark}"
+    args.offshelf_dir = args.offshelf_dir or f"ecpe_offshelf_model_{args.benchmark}"
 
     set_seed(SEED)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     journal = load_examples(args.data)[:args.max_entries]
-    headlines, skipped = load_gne_examples()
-    gne_train, gne_validation, gne_test = split_gne(headlines[:args.max_headlines])
-    print(f"Journal entries: {len(journal)} | GNE headlines: {len(headlines)} (skipped {skipped})")
-    print(f"GNE train {len(gne_train)} | validation {len(gne_validation)} | test {len(gne_test)} | device {device}")
+    if args.benchmark == "ecpe":
+        gne_train, gne_validation, gne_test, skipped = load_ecpe_splits(max_docs=args.max_headlines)
+    else:
+        headlines, skipped = load_gne_examples()
+        gne_train, gne_validation, gne_test = split_gne(headlines[:args.max_headlines])
+    print(f"Journal entries: {len(journal)} | benchmark: {args.benchmark} (skipped {skipped})")
+    print(f"Benchmark train {len(gne_train)} | validation {len(gne_validation)} | test {len(gne_test)} | device {device}")
 
-    print("\n== Stage 1: train the off-the-shelf model on news headlines ==")
+    print(f"\n== Stage 1: train the off-the-shelf model on the {args.benchmark} benchmark only ==")
     model, tokenizer, _, best_epoch = train_model(gne_train, gne_validation, args, device)
     offshelf_state = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
-    save_model(model, tokenizer, args.offshelf_dir, metadata={"base_model": args.model, "trained_on": "GoodNewsEveryone", "best_epoch": best_epoch, "seed": SEED})
+    save_model(model, tokenizer, args.offshelf_dir, metadata={"base_model": args.model, "trained_on": args.benchmark, "best_epoch": best_epoch, "seed": SEED})
 
     print("\n== Stage 2: score the off-the-shelf model ==")
     news_predictions = predict(model, tokenizer, texts(gne_test), device)
@@ -199,7 +208,7 @@ def main():
     results_dir.mkdir(parents=True, exist_ok=True)
     (results_dir / "hypothesis_results.json").write_text(json.dumps({
         "config": vars(args),
-        "sizes": {"journal_entries": len(journal), "gne_train": len(gne_train), "gne_test": len(gne_test), "gne_skipped": skipped},
+        "sizes": {"benchmark": args.benchmark, "journal_entries": len(journal), "benchmark_train": len(gne_train), "benchmark_test": len(gne_test), "benchmark_skipped": skipped},
         "pair_scores": scores,
         "tests": tests,
         "alpha": ALPHA,
@@ -216,7 +225,7 @@ def main():
     for mode in MODES:
         print(f"\n== Tests on {mode} pair F1 (alpha {ALPHA}) ==")
         h1 = tests[mode]["H1_news_minus_journal"]
-        print(f"H1 news - journal: {h1['difference']:+.3f}  CI {h1['ci95'][0]:+.3f}..{h1['ci95'][1]:+.3f}  p {h1['p_value']:.4f}")
+        print(f"H1 benchmark - journal: {h1['difference']:+.3f}  CI {h1['ci95'][0]:+.3f}..{h1['ci95'][1]:+.3f}  p {h1['p_value']:.4f}")
         for name, test in tests[mode]["H2_vs_offshelf"].items():
             print(f"H2 {name} - offshelf: {test['difference']:+.3f}  CI {test['ci95'][0]:+.3f}..{test['ci95'][1]:+.3f}  "
                   f"p {test['p_value']:.4f}  Holm p {test['p_holm']:.4f}")
