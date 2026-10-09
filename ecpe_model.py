@@ -407,6 +407,42 @@ def save_model(model, tokenizer, directory, metadata=None):
     )
 
 
+def save_pickle(model, tokenizer, path, metadata=None):
+    """Bundle weights, encoder config, tokenizer and labels into one joblib .pkl file."""
+    import joblib
+
+    bundle = {
+        "format": "ecpe-span-v1",
+        "encoder_config": model.encoder.config.to_dict(),
+        "tokenizer": tokenizer,
+        "state_dict": {k: v.detach().cpu() for k, v in model.state_dict().items()},
+        "labels": {"tags": TAGS, "emotions": EMOTIONS, "cause_statuses": CAUSE_STATUSES},
+        "metadata": metadata or {},
+    }
+    joblib.dump(bundle, path)
+
+
+def load_pickle(path, device="cpu"):
+    """Load a model saved by save_pickle; returns (model, tokenizer, metadata)."""
+    import joblib
+
+    bundle = joblib.load(path)
+    if bundle.get("format") != "ecpe-span-v1":
+        raise ValueError(f"{path} is not an ECPE model bundle.")
+    labels = bundle["labels"]
+    if (labels["tags"], labels["emotions"], labels["cause_statuses"]) != (
+        TAGS, EMOTIONS, CAUSE_STATUSES
+    ):
+        raise ValueError("Pickled model labels do not match the labels in ecpe_model.py.")
+    encoder_config = dict(bundle["encoder_config"])
+    config = AutoConfig.for_model(encoder_config.pop("model_type"), **encoder_config)
+    model = ECPEModel(AutoModel.from_config(config))
+    model.load_state_dict(bundle["state_dict"])
+    model.to(device)
+    model.eval()
+    return model, bundle["tokenizer"], bundle["metadata"]
+
+
 def load_model(directory=MODEL_DIR, device="cpu"):
     directory = Path(directory)
     if not (directory / WEIGHTS_FILE).is_file():

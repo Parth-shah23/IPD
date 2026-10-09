@@ -176,12 +176,16 @@ def selection_key(scores):
 
 # ── Training ─────────────────────────────────────────────────────────────────
 
-def train_model(train_examples, validation_examples, args, device):
+def train_model(train_examples, validation_examples, args, device, init_state=None):
+    """Fine-tune from args.model, or from init_state (a full ECPEModel state dict) when given."""
     set_seed(SEED)
     tokenizer = AutoTokenizer.from_pretrained(args.model)
     if not tokenizer.is_fast:
         raise RuntimeError(f"{args.model} has no fast tokenizer; character offsets are required.")
-    model = ECPEModel.from_checkpoint(args.model).to(device)
+    model = ECPEModel.from_checkpoint(args.model)
+    if init_state is not None:
+        model.load_state_dict(init_state)
+    model.to(device)
     train_data = encode_examples(train_examples, tokenizer)
 
     encoder_parameters = list(model.encoder.parameters())
