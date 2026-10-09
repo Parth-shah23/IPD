@@ -8,6 +8,7 @@ aspect_transformer_models/
 aspect_model*.pkl
 aspect_tfidf*.pkl
 !aspect_model_rich_logreg.pkl
+*.pkl
 
 # Project planning document
 ECPE_Journal_Project_Plan.docx

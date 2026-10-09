@@ -9,3 +9,4 @@ sentencepiece==0.2.1
 matplotlib>=3.8,<4
 statsmodels>=0.14,<1
 optuna>=4.0,<5
+streamlit>=1.50,<2
