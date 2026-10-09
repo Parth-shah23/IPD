@@ -1,0 +1,177 @@
+{
+  "config": {
+    "data": "ECPE_Synthetic_Journal_Dataset_v3.xlsx",
+    "model": "roberta-base",
+    "output_dir": "best_ecpe_model",
+    "results_dir": "ecpe_results",
+    "cv": true,
+    "folds": 5,
+    "epochs": 20,
+    "min_epochs": 6,
+    "patience": 4,
+    "batch_size": 8,
+    "grad_accum": 1,
+    "lr": 3e-05,
+    "head_lr": 0.0001,
+    "max_entries": null
+  },
+  "scores": {
+    "emotion_span_exact": {
+      "precision": 0.5614754098360656,
+      "recall": 0.6523809523809524,
+      "f1": 0.6035242290748899,
+      "f1_ci95": [
+        0.5574118085651708,
+        0.650950106368173
+      ]
+    },
+    "emotion_labelled_exact": {
+      "precision": 0.5184426229508197,
+      "recall": 0.6023809523809524,
+      "f1": 0.5572687224669602,
+      "f1_ci95": [
+        0.5114602105176934,
+        0.6027790455905472
+      ]
+    },
+    "cause_span_exact": {
+      "precision": 0.68561872909699,
+      "recall": 0.6156156156156156,
+      "f1": 0.6487341772151899,
+      "f1_ci95": [
+        0.5952728548659514,
+        0.699499382744647
+      ]
+    },
+    "pair_exact": {
+      "precision": 0.425,
+      "recall": 0.4843304843304843,
+      "f1": 0.4527296937416777,
+      "f1_ci95": [
+        0.4011115716558887,
+        0.5054975922953452
+      ]
+    },
+    "triplet_exact": {
+      "precision": 0.4,
+      "recall": 0.45584045584045585,
+      "f1": 0.42609853528628494,
+      "f1_ci95": [
+        0.37515766494178526,
+        0.4767326678962786
+      ]
+    },
+    "emotion_span_relaxed": {
+      "precision": 0.6782786885245902,
+      "recall": 0.7880952380952381,
+      "f1": 0.7290748898678413,
+      "f1_ci95": [
+        0.6898874570551772,
+        0.7654888553703684
+      ]
+    },
+    "emotion_labelled_relaxed": {
+      "precision": 0.6147540983606558,
+      "recall": 0.7142857142857143,
+      "f1": 0.6607929515418502,
+      "f1_ci95": [
+        0.6186846157446143,
+        0.7008980082417582
+      ]
+    },
+    "cause_span_relaxed": {
+      "precision": 0.8327759197324415,
+      "recall": 0.7477477477477478,
+      "f1": 0.7879746835443039,
+      "f1_ci95": [
+        0.7453973440536524,
+        0.8287592302528529
+      ]
+    },
+    "pair_relaxed": {
+      "precision": 0.5675,
+      "recall": 0.6467236467236467,
+      "f1": 0.6045272969374168,
+      "f1_ci95": [
+        0.5566995890707231,
+        0.6518814081329682
+      ]
+    },
+    "triplet_relaxed": {
+      "precision": 0.52,
+      "recall": 0.5925925925925926,
+      "f1": 0.5539280958721704,
+      "f1_ci95": [
+        0.504994372442019,
+        0.603354938801083
+      ]
+    },
+    "cause_status_accuracy": 0.9758308157099698
+  },
+  "by_structure": {
+    "cause after emotion": {
+      "entries": 35,
+      "gold_pairs": 35,
+      "predicted_pairs": 37,
+      "pair_exact_f1": 0.7222222222222223,
+      "pair_relaxed_f1": 0.75,
+      "emotion_span_relaxed_f1": 0.8108108108108107
+    },
+    "cause before emotion": {
+      "entries": 87,
+      "gold_pairs": 87,
+      "predicted_pairs": 108,
+      "pair_exact_f1": 0.5128205128205128,
+      "pair_relaxed_f1": 0.6153846153846154,
+      "emotion_span_relaxed_f1": 0.7272727272727273
+    },
+    "different sentences": {
+      "entries": 53,
+      "gold_pairs": 53,
+      "predicted_pairs": 60,
+      "pair_exact_f1": 0.3185840707964602,
+      "pair_relaxed_f1": 0.4247787610619469,
+      "emotion_span_relaxed_f1": 0.6153846153846154
+    },
+    "emotion only": {
+      "entries": 17,
+      "gold_pairs": 0,
+      "predicted_pairs": 0,
+      "pair_exact_f1": null,
+      "pair_relaxed_f1": null,
+      "emotion_span_relaxed_f1": 0.8888888888888888
+    },
+    "implicit cause": {
+      "entries": 52,
+      "gold_pairs": 0,
+      "predicted_pairs": 3,
+      "pair_exact_f1": null,
+      "pair_relaxed_f1": null,
+      "emotion_span_relaxed_f1": 0.6608695652173913
+    },
+    "no emotion": {
+      "entries": 18,
+      "gold_pairs": 0,
+      "predicted_pairs": 0,
+      "pair_exact_f1": null,
+      "pair_relaxed_f1": null,
+      "emotion_span_relaxed_f1": 0.0
+    },
+    "one cause, two emotions": {
+      "entries": 18,
+      "gold_pairs": 36,
+      "predicted_pairs": 35,
+      "pair_exact_f1": 0.47887323943661975,
+      "pair_relaxed_f1": 0.647887323943662,
+      "emotion_span_relaxed_f1": 0.647887323943662
+    },
+    "two emotions, two causes": {
+      "entries": 70,
+      "gold_pairs": 140,
+      "predicted_pairs": 157,
+      "pair_exact_f1": 0.39730639730639733,
+      "pair_relaxed_f1": 0.6262626262626263,
+      "emotion_span_relaxed_f1": 0.7811447811447811
+    }
+  }
+}

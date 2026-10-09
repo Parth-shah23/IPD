@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ECPE System Architecture</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #F7F6F3;
+      color: #1C1C1A;
+      padding: 32px 24px 48px;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: #73726C;
+      margin-bottom: 24px;
+    }
+
+    /* ── Legend ─────────────────────────────────────── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-bottom: 24px;
+      font-size: 0.78rem;
+      color: #3C3B37;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .swatch {
+      width: 22px;
+      height: 14px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ── Lanes ──────────────────────────────────────── */
+    .lane {
+      border: 1.5px solid #D3D1C7;
+      border-radius: 10px;
+      padding: 14px 16px 16px;
+      background: #FFFFFF;
+    }
+
+    .lane-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #73726C;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .down {
+      text-align: center;
+      color: #73726C;
+      font-size: 0.8rem;
+      padding: 6px 0;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .arrow {
+      color: #73726C;
+      flex-shrink: 0;
+    }
+
+    .note {
+      font-size: 0.75rem;
+      color: #73726C;
+      margin: 10px 0 8px;
+    }
+
+    /* ── Nodes: fill = type, border style = status ─── */
+    .node {
+      border-radius: 8px;
+      padding: 9px 12px;
+      flex: 1 1 130px;
+      border: 1.5px dashed;
+    }
+
+    .node.built {
+      border-style: solid;
+    }
+
+    .title {
+      font-size: 0.86rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .sub {
+      font-size: 0.74rem;
+      line-height: 1.4;
+      opacity: 0.75;
+      margin-top: 2px;
+    }
+
+    .ui { background: #FFFFFF; border-color: #888780; color: #2C2C2A; }
+    .ml { background: #EEEDFE; border-color: #534AB7; color: #26215C; }
+    .safety { background: #FAECE7; border-color: #993C1D; color: #4A1B0C; }
+    .store { background: #E1F5EE; border-color: #0F6E56; color: #04342C; }
+    .llm { background: #F1EFE8; border-color: #5F5E5A; color: #2C2C2A; }
+
+    .flagged {
+      margin-top: 8px;
+      font-size: 0.74rem;
+      color: #993C1D;
+      font-weight: 500;
+    }
+
+    /* ── Main grid: flows on the left, storage on the right ── */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 230px;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .flows {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .storage .node {
+      margin-bottom: 8px;
+    }
+
+    .storage .sub-note {
+      font-size: 0.74rem;
+      color: #73726C;
+      line-height: 1.5;
+    }
+
+    .crosscut {
+      margin-top: 16px;
+      border: 1.5px dashed #888780;
+      border-radius: 8px;
+      background: #FFFFFF;
+      padding: 10px 16px;
+      font-size: 0.82rem;
+      color: #3C3B37;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: 24px 16px 40px; }
+      .main { grid-template-columns: 1fr; }
+      .row { flex-direction: column; align-items: stretch; }
+      .arrow { transform: rotate(90deg); align-self: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>ECPE System Architecture</h1>
+  <p class="subtitle">Emotion-cause analysis for digital journaling</p>
+
+  <div class="legend">
+    <div class="legend-item"><div class="swatch" style="border:1.5px solid #3C3B37;"></div> Built</div>
+    <div class="legend-item"><div class="swatch" style="border:1.5px dashed #3C3B37;"></div> Proposed</div>
+    <div class="legend-item"><div class="swatch ml" style="border:1.5px solid #534AB7;"></div> ML model</div>
+    <div class="legend-item"><div class="swatch safety" style="border:1.5px solid #993C1D;"></div> Safety</div>
+    <div class="legend-item"><div class="swatch llm" style="border:1.5px solid #5F5E5A;"></div> LLM / processing</div>
+    <div class="legend-item"><div class="swatch store" style="border:1.5px solid #0F6E56;"></div> Storage</div>
+    <div class="legend-item"><div class="swatch ui" style="border:1.5px solid #888780;"></div> App / UI</div>
+  </div>
+
+  <!-- ① CLIENT + API -->
+  <div class="lane">
+    <div class="lane-label">① Web app</div>
+    <div class="row">
+      <div class="node ui"><div class="title">Journal editor</div></div>
+      <div class="node ui"><div class="title">Dashboard</div></div>
+      <div class="node ui"><div class="title">Chatbot</div></div>
+      <div class="node ui"><div class="title">Summaries</div></div>
+    </div>
+    <div class="down">↓</div>
+    <div class="node ui">
+      <div class="title">Backend API (FastAPI)</div>
+      <div class="sub">login · each user sees only their own data · consent</div>
+    </div>
+  </div>
+
+  <div class="down">↓</div>
+
+  <div class="main">
+    <div class="flows">
+
+      <!-- ② INGESTION -->
+      <div class="lane">
+        <div class="lane-label">② On each new entry</div>
+        <div class="row">
+          <div class="node ui">
+            <div class="title">Input</div>
+            <div class="sub">text, or photo → OCR</div>
+          </div>
+          <span class="arrow">→</span>
+          <div class="node safety">
+            <div class="title">🛡 Safety check</div>
+            <div class="sub">runs first</div>
+            <div class="flagged">if flagged → show support resources</div>
+          </div>
+          <span class="arrow">→</span>
+          <div class="node ui">
+            <div class="title">Save entry</div>
+          </div>
+        </div>
+
+        <p class="note">↓ then in the background</p>
+
+        <div class="row">
+          <div class="node ml built">
+            <div class="title">ECPE model</div>
+            <div class="sub">emotions + their causes</div>
+          </div>
+          <span class="arrow">→</span>
+          <div class="node ml built">
+            <div class="title">Aspect classifier</div>
+            <div class="sub">life area of each cause</div>
+          </div>
+        </div>
+        <p class="note">in parallel:</p>
+        <div class="row">
+          <div class="node ml built">
+            <div class="title">NER</div>
+            <div class="sub">people, places, dates</div>
+          </div>
+          <div class="node ml">
+            <div class="title">Embedding</div>
+            <div class="sub">for search by meaning</div>
+          </div>
+        </div>
+
+        <div class="down">↓</div>
+        <div class="node ui">
+          <div class="title">Structured record → storage</div>
+          <div class="sub">emotions · causes · life areas · entities · vector · model version</div>
+        </div>
+      </div>
+
+      <!-- ③ FEATURES -->
+      <div class="lane">
+        <div class="lane-label">③ Features</div>
+        <div class="row">
+          <div class="node ui">
+            <div class="title">Dashboard &amp; cause graph</div>
+            <div class="sub">counts from stored tags, no LLM</div>
+          </div>
+          <div class="node llm">
+            <div class="title">Summaries</div>
+            <div class="sub">weekly &amp; monthly, LLM</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ④ CHATBOT -->
+      <div class="lane">
+        <div class="lane-label">④ Chatbot</div>
+        <div class="row">
+          <div class="node llm">
+            <div class="title">Question → filters</div>
+            <div class="sub">emotion, cause, dates</div>
+          </div>
+          <span class="arrow">→</span>
+          <div class="node ui">
+            <div class="title">Find entries</div>
+            <div class="sub">filter by tags, rank by meaning</div>
+          </div>
+          <span class="arrow">→</span>
+          <div class="node llm">
+            <div class="title">Answer</div>
+            <div class="sub">only from those entries</div>
+          </div>
+          <span class="arrow">→</span>
+          <div class="node safety">
+            <div class="title">🛡 Check reply</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ⑤ STORAGE (shared by all flows) -->
+    <div class="lane storage">
+      <div class="lane-label">⑤ Storage</div>
+      <div class="node store">
+        <div class="title">PostgreSQL + pgvector</div>
+        <div class="sub">entries · tags · vectors · summaries · feedback</div>
+      </div>
+      <div class="node store">
+        <div class="title">Photo store</div>
+        <div class="sub">optional</div>
+      </div>
+      <p class="sub-note">One database. Every row belongs to one user and is encrypted.</p>
+    </div>
+  </div>
+
+  <div class="down">↓</div>
+
+  <!-- ⑥ OFFLINE LEARNING LOOP -->
+  <div class="lane">
+    <div class="lane-label">⑥ Offline — training and improvement</div>
+    <div class="row">
+      <div class="node ui">
+        <div class="title">User corrections</div>
+        <div class="sub">with consent</div>
+      </div>
+      <span class="arrow">→</span>
+      <div class="node llm">
+        <div class="title">Human review</div>
+      </div>
+      <span class="arrow">→</span>
+      <div class="node llm built">
+        <div class="title">Datasets</div>
+        <div class="sub">synthetic · human test set</div>
+      </div>
+      <span class="arrow">→</span>
+      <div class="node llm built">
+        <div class="title">Train &amp; test</div>
+        <div class="sub">on a frozen test set</div>
+      </div>
+      <span class="arrow">→</span>
+      <div class="node store">
+        <div class="title">Model registry</div>
+        <div class="sub">versioned; used by ②</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="crosscut">
+    <strong>Applies everywhere:</strong>
+    login · encryption · consent · delete my data · option to use a local LLM instead of an external API
+  </div>
+
+</body>
+
+</html>

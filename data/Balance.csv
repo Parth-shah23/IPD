@@ -1,0 +1,52 @@
+Dataset balance (live formulas),,,
+Blue = plan targets you can edit. Black = formulas counting the Entries and Pairs sheets.,,,
+,,,
+Entry structure,Target,Actual,Actual minus target
+cause before emotion,88,87,-1
+cause after emotion,35,35,0
+different sentences,52,53,1
+implicit cause,52,52,0
+"two emotions, two causes",70,70,0
+"one cause, two emotions",18,18,0
+emotion only,18,17,-1
+no emotion,17,18,1
+Total entries,350,350,0
+,,,
+Emotion (per pair row),Pair rows,Share of rows,
+joy,55,0.125570776255708,
+contentment,46,0.105022831050228,
+pride,39,0.089041095890411,
+gratitude,30,0.0684931506849315,
+sadness,51,0.116438356164384,
+anger,42,0.0958904109589041,
+fear,52,0.118721461187215,
+stress,41,0.0936073059360731,
+guilt,34,0.0776255707762557,
+surprise,30,0.0684931506849315,
+neutral,18,0.0410958904109589,
+Total pair rows,438,,
+,,,
+Cause area (per pair row),Pair rows,Share of rows,
+studies_work,77,0.175799086757991,
+health,46,0.105022831050228,
+family,34,0.0776255707762557,
+friends,55,0.125570776255708,
+relationships,29,0.0662100456621005,
+self,34,0.0776255707762557,
+money,36,0.0821917808219178,
+other,40,0.091324200913242,
+none,87,0.198630136986301,
+,,,
+Entry length,Target,Actual,Actual minus target
+short,70,148,78
+medium,175,165,-10
+long,88,34,-54
+very long,17,3,-14
+"Buckets: short under 40 words, medium 40 to 99, long 100 to 200, very long over 200",,,
+,,,
+Entities (NER),Target,Actual,Actual minus target
+Entries with at least one entity,245,227,-18
+"Entries with a ROLE mention (Mom, my sister...)",105,90,-15
+Entries with no entities,105,123,18
+,,,
+"Notes: targets are the plan agreed earlier (structure mix, length mix, 70 percent of entries with entities, 30 percent with role mentions). Emotion and cause-area shares have no fixed target; check they are not dominated by one value.",,,
