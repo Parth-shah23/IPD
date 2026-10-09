@@ -21,3 +21,7 @@ evaluation_log.csv
 
 # Python bytecode cache
 __pycache__/
+
+# ECPE model weights and evaluation outputs (generated locally)
+best_ecpe_model/
+ecpe_results/
