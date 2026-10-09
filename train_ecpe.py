@@ -5,7 +5,6 @@ Default mode trains a final model on a stratified 90/10 split and saves it.
 out-of-fold pair F1 with bootstrap confidence intervals.
 """
 import argparse
-import copy
 import json
 import math
 import random
@@ -269,20 +268,26 @@ def print_scores(scores, title):
 
 
 def scores_by_structure(examples, predictions):
+    """Pair F1 per structure; structures with no gold pairs get None and are judged by false positives."""
     groups = {}
     for example, prediction in zip(examples, predictions):
         groups.setdefault(example["structure"], ([], []))
         groups[example["structure"]][0].append(example)
         groups[example["structure"]][1].append(prediction)
-    return {
-        structure: {
+    results = {}
+    for structure, (group_examples, group_predictions) in sorted(groups.items()):
+        group_scores = score(group_examples, group_predictions)
+        gold_pairs = sum(len(gold_items(e)["pair"]) for e in group_examples)
+        predicted_pairs = sum(len(predicted_items(p)["pair"]) for p in group_predictions)
+        results[structure] = {
             "entries": len(group_examples),
-            "pair_exact_f1": score(group_examples, group_predictions)["pair_exact"]["f1"],
-            "pair_relaxed_f1": score(group_examples, group_predictions)["pair_relaxed"]["f1"],
-            "emotion_span_relaxed_f1": score(group_examples, group_predictions)["emotion_span_relaxed"]["f1"],
+            "gold_pairs": gold_pairs,
+            "predicted_pairs": predicted_pairs,
+            "pair_exact_f1": group_scores["pair_exact"]["f1"] if gold_pairs else None,
+            "pair_relaxed_f1": group_scores["pair_relaxed"]["f1"] if gold_pairs else None,
+            "emotion_span_relaxed_f1": group_scores["emotion_span_relaxed"]["f1"],
         }
-        for structure, (group_examples, group_predictions) in sorted(groups.items())
-    }
+    return results
 
 
 def serialise_gold(example):
@@ -329,11 +334,15 @@ def run_cross_validation(examples, args, device):
     scores = score(examples, predictions, bootstrap=True)
     by_structure = scores_by_structure(examples, predictions)
     print_scores(scores, f"Out-of-fold scores over {len(examples)} entries ({args.folds}-fold CV)")
-    print(f"\n{'structure':<28}{'n':>4}{'pair exact':>12}{'pair relaxed':>14}")
+    print(f"\n{'structure':<28}{'n':>4}{'gold pairs':>12}{'pred pairs':>12}{'pair exact':>12}{'pair relaxed':>14}")
     for structure, values in by_structure.items():
+        if values["gold_pairs"]:
+            f1_text = f"{values['pair_exact_f1']:>12.3f}{values['pair_relaxed_f1']:>14.3f}"
+        else:
+            f1_text = "   n/a: every predicted pair is a false positive"
         print(
-            f"{structure:<28}{values['entries']:>4}{values['pair_exact_f1']:>12.3f}"
-            f"{values['pair_relaxed_f1']:>14.3f}"
+            f"{structure:<28}{values['entries']:>4}{values['gold_pairs']:>12}"
+            f"{values['predicted_pairs']:>12}{f1_text}"
         )
 
     results_dir = Path(args.results_dir)

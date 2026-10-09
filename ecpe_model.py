@@ -30,6 +30,10 @@ CAUSE_STATUSES = ["stated", "implicit", "none"]
 # Lower bounds of token-distance buckets between an emotion span and a cause span.
 DISTANCE_BUCKETS = (0, 1, 2, 4, 8, 16, 32, 64)
 DISTANCE_DIM = 32
+# Every gold emotion has exactly one stated cause, and no gold cause clause is
+# shorter than four words, so decoding links one cause and drops tiny cause spans.
+MAX_CAUSES_PER_EMOTION = 1
+MIN_CAUSE_WORDS = 3
 
 
 def clean_cell(value):
@@ -320,17 +324,28 @@ def predict(model, tokenizer, texts, device, batch_size=8):
         hidden, tag_logits = model.encode(
             tokenized["input_ids"].to(device), tokenized["attention_mask"].to(device)
         )
-        tag_batch = tag_logits.argmax(dim=-1).cpu().tolist()
+        tag_confidence, tag_ids = torch.softmax(tag_logits.float(), dim=-1).max(dim=-1)
+        tag_batch = tag_ids.cpu().tolist()
+        tag_confidence = tag_confidence.cpu()
 
         for row, text in enumerate(chunk):
             offsets = offsets_batch[row]
             valid = [index for index, (start, end) in enumerate(offsets) if end > start]
             spans = decode_tags([tag_batch[row][index] for index in valid])
-            emotion_spans = [(valid[s], valid[e]) for kind, s, e in spans if kind == "EMO"]
-            cause_spans = [(valid[s], valid[e]) for kind, s, e in spans if kind == "CAU"]
 
             def char_span(token_span):
                 return offsets[token_span[0]][0], offsets[token_span[1]][1]
+
+            def span_confidence(token_span):
+                return round(float(tag_confidence[row, token_span[0]:token_span[1] + 1].mean()), 4)
+
+            emotion_spans = [(valid[s], valid[e]) for kind, s, e in spans if kind == "EMO"]
+            cause_spans = [
+                (valid[s], valid[e])
+                for kind, s, e in spans
+                if kind == "CAU"
+                and len(text[slice(*char_span((valid[s], valid[e])))].split()) >= MIN_CAUSE_WORDS
+            ]
 
             emotions = []
             if emotion_spans:
@@ -354,12 +369,8 @@ def predict(model, tokenizer, texts, device, batch_size=8):
                             # No cause span was found, so fall back to implicit or none.
                             status_id = 1 + int(status_probs[position, 1:].argmax())
                         else:
-                            best = int(pair_probs[position].argmax())
-                            linked = [
-                                index
-                                for index in range(len(cause_spans))
-                                if index == best or pair_probs[position, index] > 0.5
-                            ]
+                            ranked = pair_probs[position].argsort(descending=True).tolist()
+                            linked = ranked[:MAX_CAUSES_PER_EMOTION]
                     causes = []
                     for index in linked:
                         cause_start, cause_end = char_span(cause_spans[index])
@@ -367,12 +378,14 @@ def predict(model, tokenizer, texts, device, batch_size=8):
                             "cause_clause": text[cause_start:cause_end],
                             "start": cause_start,
                             "end": cause_end,
+                            "span_confidence": span_confidence(cause_spans[index]),
                             "confidence": round(float(pair_probs[position, index]), 4),
                         })
                     emotions.append({
                         "emotion_clause": text[start:end],
                         "start": start,
                         "end": end,
+                        "span_confidence": span_confidence(token_span),
                         "emotion": EMOTIONS[emotion_id],
                         "emotion_confidence": round(float(emotion_probs[position, emotion_id]), 4),
                         "cause_status": CAUSE_STATUSES[status_id],
